@@ -1,0 +1,26 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [master]
+    paths: 
+      - '.github/workflows/docker-image-ci.yml'
+      - '*/Dockerfile'
+  pull_request:
+    paths:
+      - '.github/workflows/docker-image-ci.yml'
+      - '*/Dockerfile'
+
+jobs:
+
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        version: [5.3]
+    runs-on: ubuntu-latest
+ 
+    steps:
+    - uses: actions/checkout@v1
+    - name: Build the Docker image
+      run: docker build swift-${{ matrix.version }}
