@@ -6,4 +6,4 @@ RUN apt-get update -y && apt-get install -y \
   rm -r /var/lib/apt/lists/*
 
 # Install bundler
-RUN gem install bundler
+RUN gem install bundler -v '~> 2.1.4'
