@@ -10,6 +10,7 @@ on:
     paths:
       - '.github/workflows/docker-image-ci.yml'
       - '*/Dockerfile'
+  workflow_dispatch:
 
 jobs:
 
