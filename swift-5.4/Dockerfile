@@ -1,4 +1,4 @@
-FROM swift:5.3
+FROM swift:5.4
 
 # Install system packages
 RUN apt-get update -y && \
