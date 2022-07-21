@@ -1,4 +1,4 @@
-FROM swift:5.3
+FROM swift:5.6
 
 # Install system packages
 RUN apt-get update -y && \
@@ -11,8 +11,8 @@ RUN \curl -sSL https://get.rvm.io | bash -s stable
 SHELL ["/bin/bash", "-l", "-c"]
 RUN rvm requirements
 RUN source /etc/profile.d/rvm.sh
-RUN rvm install 2.6
-RUN gem install bundler --no-document -f -v "~> 2.2.27"
+RUN rvm install 3.0
+RUN gem install bundler --no-document -f -v "~> 2.2.33"
 
 # configure env
 ENV rvm_path="/usr/local/rvm"
